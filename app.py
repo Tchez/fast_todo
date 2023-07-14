@@ -4,6 +4,7 @@ from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from user.models import User
+from todo.models import Todo
 from api.api_v1.router import router
 
 app = FastAPI(
@@ -19,6 +20,7 @@ async def startup_event():
         database=client,
         document_models=[
             User,
+            Todo,
         ],
     )
 
